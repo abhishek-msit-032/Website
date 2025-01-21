@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<div class="products-page">
+    <h1 class="text-primary">Products Data</h1>
+    <input type="text" id="searchInput" class="form-control" placeholder="Search products..." onkeyup="filterTable()">
+    
+    {% if data %}
+        <table class="table table-striped" id="productsTable">
+            <thead>
+                <tr>
+                    {% for col in data[0].keys() %}
+                        <th scope="col">{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr>
+                        {% for value in row.values() %}
+                            <td>{{ value|escape }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No products available.</p>
+    {% endif %}
+</div>
+
+<script>
+    function filterTable() {
+        // Get the value of the search input
+        var input = document.getElementById("searchInput").value.toLowerCase();
+        var table = document.getElementById("productsTable");
+        var rows = table.getElementsByTagName("tr");
+
+        // Loop through all rows and hide those that don't match the search
+        for (var i = 1; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName("td");
+            var rowMatches = false;
+
+            // Check if any cell contains the search query
+            for (var j = 0; j < cells.length; j++) {
+                if (cells[j].innerText.toLowerCase().includes(input)) {
+                    rowMatches = true;
+                    break;
+                }
+            }
+
+            // Show or hide row based on whether it matches the search query
+            rows[i].style.display = rowMatches ? "" : "none";
+        }
+    }
+</script>
+{% endblock %}

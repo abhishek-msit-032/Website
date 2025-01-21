@@ -1,0 +1,184 @@
+/* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ddd; /* Add a border to separate from content */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for footer */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;  /* Rounded corners for table */
+    overflow: hidden; /* Ensures corners are rounded */
+}
+
+/* Table Cell Styling */
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;  /* Increased padding for better spacing */
+    text-align: left;
+}
+
+/* Table Header Styling */
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Table Row Styling */
+tr:nth-child(even) {
+    background-color: #f9f9f9;  /* Light grey for better contrast */
+}
+
+/* Hover Effect for Table Rows */
+tr:hover {
+    background-color: #f1f1f1;  /* Subtle hover effect */
+}
+
+/* Make table responsive on smaller screens */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto; /* Horizontal scroll for smaller devices */
+        white-space: nowrap; /* Prevents text wrapping */
+    }
+}
+
+/* Style for Buttons, Links, etc. */
+button, a {
+    background-color: #007bff;  /* Button background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, a:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+}
+
+/* About Us Page Styles (Scoped to .about-page class) */
+.about-page {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.about-page h1.text-primary {
+    font-size: 2.5rem;
+    color: #007bff;
+    text-align: center;
+}
+
+.about-page h2.text-secondary {
+    font-size: 2rem;
+    color: #343a40;
+}
+
+.about-page ul {
+    padding-left: 20px;
+    font-size: 1.1rem;
+}
+
+.about-page ul li {
+    margin-bottom: 10px;
+}
+
+.about-page p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Section Spacing */
+.about-page h1, .about-page h2, .about-page p {
+    margin-bottom: 20px;
+}
+
+/* Products Page Styles (Scoped to .products-page class) */
+.products-page {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.products-page h1.text-primary {
+    font-size: 2.5rem;
+    color: #007bff;
+    text-align: center;
+}
+
+.products-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures rounded corners are maintained */
+}
+
+.products-page th, .products-page td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Table Header Styling */
+.products-page th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Table Row Styling */
+.products-page tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect for Table Rows */
+.products-page tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Make table responsive on smaller screens */
+@media (max-width: 768px) {
+    .products-page table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
