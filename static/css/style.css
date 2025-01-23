@@ -1,4 +1,4 @@
-/* Global Styles */
+/* General Styles */
 html, body {
     height: 100%;
     margin: 0;
@@ -19,8 +19,8 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    border-top: 1px solid #ddd; /* Add a border to separate from content */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for footer */
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Table Styles */
@@ -29,14 +29,14 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
     font-family: Arial, sans-serif;
-    border-radius: 8px;  /* Rounded corners for table */
-    overflow: hidden; /* Ensures corners are rounded */
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 /* Table Cell Styling */
 th, td {
     border: 1px solid #ddd;
-    padding: 12px 15px;  /* Increased padding for better spacing */
+    padding: 12px 15px;
     text-align: left;
 }
 
@@ -50,26 +50,26 @@ th {
 
 /* Table Row Styling */
 tr:nth-child(even) {
-    background-color: #f9f9f9;  /* Light grey for better contrast */
+    background-color: #f9f9f9;
 }
 
 /* Hover Effect for Table Rows */
 tr:hover {
-    background-color: #f1f1f1;  /* Subtle hover effect */
+    background-color: #f1f1f1;
 }
 
 /* Make table responsive on smaller screens */
 @media (max-width: 768px) {
     table {
         display: block;
-        overflow-x: auto; /* Horizontal scroll for smaller devices */
-        white-space: nowrap; /* Prevents text wrapping */
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }
 
-/* Style for Buttons, Links, etc. */
+/* Button and Link Styles */
 button, a {
-    background-color: #007bff;  /* Button background */
+    background-color: #007bff;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -79,12 +79,11 @@ button, a {
 }
 
 button:hover, a:hover {
-    background-color: #0056b3;  /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
-/* About Us Page Styles (Scoped to .about-page class) */
-.about-page {
-    max-width: 900px;
+/* About Us Page Styles */
+.about-page, .products-page, .contact-page {
     margin: auto;
     padding: 30px;
     font-family: 'Roboto', sans-serif;
@@ -93,23 +92,33 @@ button:hover, a:hover {
     border-radius: 8px;
 }
 
-.about-page h1.text-primary {
+/* Increase the width for About Us and Products Pages */
+.about-page {
+    max-width: 900px; /* Increased max width */
+}
+
+.products-page {
+    max-width: 900px; /* Increased max width */
+}
+
+.about-page h1.text-primary, .products-page h1.text-primary, .contact-page h1.text-primary {
     font-size: 2.5rem;
     color: #007bff;
     text-align: center;
 }
 
-.about-page h2.text-secondary {
+/* About Us Page */
+.about-page h2.text-secondary, .products-page h2.text-secondary {
     font-size: 2rem;
     color: #343a40;
 }
 
-.about-page ul {
+.about-page ul, .products-page table {
     padding-left: 20px;
     font-size: 1.1rem;
 }
 
-.about-page ul li {
+.about-page ul li, .products-page th, .products-page td {
     margin-bottom: 10px;
 }
 
@@ -119,14 +128,15 @@ button:hover, a:hover {
     color: #555;
 }
 
-/* Section Spacing */
-.about-page h1, .about-page h2, .about-page p {
-    margin-bottom: 20px;
+.products-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-/* Products Page Styles (Scoped to .products-page class) */
-.products-page {
-    max-width: 900px;
+/* Contact Us Page */
+.contact-page {
+    max-width: 500px; /* Decreased max width for the contact form */
     margin: auto;
     padding: 30px;
     font-family: 'Roboto', sans-serif;
@@ -135,50 +145,69 @@ button:hover, a:hover {
     border-radius: 8px;
 }
 
-.products-page h1.text-primary {
+.contact-page h1.text-primary {
     font-size: 2.5rem;
     color: #007bff;
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.products-page table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-family: Arial, sans-serif;
-    border-radius: 8px;
-    overflow: hidden; /* Ensures rounded corners are maintained */
+/* Form Fields Styling */
+.contact-page form {
+    display: flex;
+    flex-direction: column;
 }
 
-.products-page th, .products-page td {
-    border: 1px solid #ddd;
+.contact-page input[type="text"],
+.contact-page input[type="email"],
+.contact-page textarea {
+    width: 100%; /* Full width, but constrained by parent */
+    max-width: 100%; /* Ensures they don't exceed container width */
     padding: 12px 15px;
-    text-align: left;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
 }
 
-/* Table Header Styling */
-.products-page th {
-    background-color: #4CAF50;
+.contact-page input[type="text"]:focus,
+.contact-page input[type="email"]:focus,
+.contact-page textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.contact-page textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Submit Button */
+.contact-page button[type="submit"] {
+    background-color: #007bff;
     color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Table Row Styling */
-.products-page tr:nth-child(even) {
-    background-color: #f9f9f9;
+.contact-page button[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
-/* Hover Effect for Table Rows */
-.products-page tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Make table responsive on smaller screens */
+/* Responsive adjustments for small screens */
 @media (max-width: 768px) {
-    .products-page table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+    .contact-page {
+        padding: 20px; /* Reduced padding on mobile */
+    }
+
+    .contact-page input[type="text"],
+    .contact-page input[type="email"],
+    .contact-page textarea {
+        width: 100%; /* Ensure inputs span full width on smaller screens */
     }
 }

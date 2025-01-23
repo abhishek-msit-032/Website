@@ -23,14 +23,8 @@ def products():
 def about():
     return render_template('about.html')
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact')
 def contact():
-    if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
-        # Here, you could add logic to save this information to a database or send an email.
-        return f"Thank you, {name}! Your message has been received."
     return render_template('contact.html')
 
 if __name__ == '__main__':
